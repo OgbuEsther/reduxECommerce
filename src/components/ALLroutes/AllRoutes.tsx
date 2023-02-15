@@ -9,7 +9,7 @@ const AllRoutes = () => {
       element: <HomeScreen />,
     },
   ]);
-  return <div>AllRoutes</div>;
+  return <div>{routes}</div>;
 };
 
 export default AllRoutes;
