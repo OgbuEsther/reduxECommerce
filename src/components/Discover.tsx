@@ -187,6 +187,17 @@ const Card = styled.div`
 
 const Wrapper = styled.div`
   width: 90%;
+
+  h1 {
+    color: black;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 60px;
+
+    span {
+      color: darkgray;
+    }
+  }
 `;
 
 const Container = styled.div`

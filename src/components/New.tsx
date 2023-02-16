@@ -7,7 +7,7 @@ const New = () => {
       <Container>
         <Wrapper>
           <h1>
-            New Arrivals. <span>REY backpacks & bags</span> REY backpacks & bags
+            New Arrivals. <span>REY backpacks & bags</span>
           </h1>
         </Wrapper>
       </Container>
@@ -17,6 +17,26 @@ const New = () => {
 
 export default New;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  width: 90%;
 
-const Container = styled.div``;
+  h1 {
+    color: black;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 60px;
+
+    span {
+      color: darkgray;
+    }
+  }
+`;
+
+const Container = styled.div`
+  padding-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+`;
