@@ -4,13 +4,16 @@ import "./App.css";
 import Header from "./components/Header";
 import AllRoutes from "./components/ALLroutes/AllRoutes";
 import Cont from "./components/Cont";
+import Details from "./components/DETAILSPAGE/Details";
 
 function App() {
   return (
     <div className="App">
-      {/* <Cont /> */}
       <Header />
-      <AllRoutes />
+      <Details />
+      {/* <Cont /> */}
+      {/* <Header />
+      <AllRoutes /> */}
     </div>
   );
 }

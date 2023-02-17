@@ -94,7 +94,8 @@ const First = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  height: 500px;
+  /* height: 500px; */
+  height: calc(100vh);
   background-color: #e3ffe6;
   display: flex;
   align-items: center;

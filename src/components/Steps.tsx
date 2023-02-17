@@ -7,9 +7,10 @@ interface iProps {
   title: string;
   sub: string;
   bg: string;
+  col: string;
 }
 
-const Steps: React.FC<iProps> = ({ img, step, title, sub, bg }) => {
+const Steps: React.FC<iProps> = ({ img, step, title, sub, bg, col }) => {
   return (
     <div>
       <CardDetails>
@@ -17,7 +18,9 @@ const Steps: React.FC<iProps> = ({ img, step, title, sub, bg }) => {
           <img src={img} alt="" />
         </Card>
         <TextHold>
-          <Step bg={bg}>{step} </Step>
+          <Step col={col} bg={bg}>
+            {step}{" "}
+          </Step>
           <Title>{title} </Title>
           <Sub>{sub} </Sub>
         </TextHold>
@@ -28,7 +31,7 @@ const Steps: React.FC<iProps> = ({ img, step, title, sub, bg }) => {
 
 export default Steps;
 
-const Step = styled.button<{ bg: string }>`
+const Step = styled.button<{ bg: string; col: string }>`
   width: 70px;
   height: 30px;
   border-radius: 30px;
@@ -36,6 +39,11 @@ const Step = styled.button<{ bg: string }>`
   outline: none;
   margin-bottom: 20px;
   background-color: ${(props) => props.bg};
+  color: #000000a6;
+  /* color: ${(props) => props.col}; */
+  font-weight: bold;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  font-size: 12px;
 `;
 
 const Sub = styled.div`

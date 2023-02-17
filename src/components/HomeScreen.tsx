@@ -1,5 +1,8 @@
 import React from "react";
+import styled from "styled-components";
+import Arrivals from "./Arrivals";
 import Discover from "./Discover";
+import Explore from "./Explore";
 import Hero from "./Hero";
 import New from "./New";
 import Steps from "./Steps";
@@ -19,16 +22,34 @@ const HomeScreen = () => {
       <br />
       <br />
       <br />
-      <New />
+
+      <Arrivals />
       <br />
       <br />
       <br />
-      <br />
+      <Hold>
+        <hr />
+      </Hold>
       <br />
       <br />
       <StepsComp />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Explore />
     </div>
   );
 };
 
 export default HomeScreen;
+
+const Hold = styled.div`
+  /* height: 1px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+`;
