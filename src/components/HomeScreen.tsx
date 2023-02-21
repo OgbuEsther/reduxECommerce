@@ -47,9 +47,9 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const Hold = styled.div`
-  /* height: 1px;
+  height: 1px;
   width: 80%;
   display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
 `;
