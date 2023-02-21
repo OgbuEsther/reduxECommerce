@@ -1,5 +1,6 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
+import CartPage from "../Cart/CartPage";
 import HomeScreen from "../HomeScreen";
 import SinglePage from "../Singlepage/SinglePage";
 
@@ -12,6 +13,10 @@ const AllRoutes = () => {
     {
       path: "/details/:id",
       element: <SinglePage />,
+    },
+    {
+      path: "/cart",
+      element: <CartPage />,
     },
   ]);
   return <div>{routes}</div>;
