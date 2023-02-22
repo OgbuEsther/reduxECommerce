@@ -45,8 +45,15 @@ const ReduxState = createSlice({
       }
     },
     removeFromCart: (state, { payload }: PayloadAction<cartData>) => {
-      const checking = state.cart.findIndex((el) => el._id === payload._id);
+      const removeItem = state.cart.filter((el) => el._id !== payload._id);
+      state.cart = removeItem;
     },
+
+    /**  removeProduct: (state, action) => {
+            let index = state.products.indexOf(action.payload);
+            state.quantity -= action.payload
+            state.products.splice(index, 1)
+         */
   },
 });
 
