@@ -32,9 +32,21 @@ const ReduxState = createSlice({
     logoutUser: (state) => {
       state.currentUser = null;
     },
+    addToCart: (state, { payload }: PayloadAction<cartData>) => {
+      const check = state.cart.findIndex((el) => el._id === payload._id);
+
+      if (check >= 0) {
+        state.cart[check].cartQuantity += 1;
+      } else {
+        state.cart.push({
+          ...payload,
+          cartQuantity: 1,
+        });
+      }
+    },
   },
 });
 
-export const { loginUser, logoutUser } = ReduxState.actions;
+export const { loginUser, logoutUser, addToCart } = ReduxState.actions;
 
 export default ReduxState.reducer;
