@@ -15,8 +15,8 @@ const SinglePage = () => {
           <Holder>
             <ButtonHold>
               <But>-</But>
-              <Count></Count>
-              <But></But>
+              <Count>0</Count>
+              <But>+</But>
             </ButtonHold>
             <MainButton>add to cart</MainButton>
           </Holder>
@@ -41,6 +41,9 @@ const DescHold = styled.div`
 const ButtonHold = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+  /* width: 150px; */
 `;
 
 const But = styled.button`
@@ -58,9 +61,11 @@ const But = styled.button`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   margin-right: 20px;
   cursor: pointer;
-  /* margin-left: 20px; */
+  margin-left: 20px;
 `;
-const Count = styled.div``;
+const Count = styled.div`
+  /* margin-right: 15px; */
+`;
 const MainButton = styled.button`
   height: 45px;
   width: 250px;

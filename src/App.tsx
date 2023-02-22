@@ -5,12 +5,14 @@ import Header from "./components/Header";
 import AllRoutes from "./components/ALLroutes/AllRoutes";
 import Cont from "./components/Cont";
 import Details from "./components/DETAILSPAGE/Details";
+import SinglePage from "./components/Singlepage/SinglePage";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <AllRoutes />
+      {/* <AllRoutes /> */}
+      <SinglePage />
     </div>
   );
 }
