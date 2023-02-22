@@ -23,11 +23,18 @@ const initialState = {
 };
 
 const ReduxState = createSlice({
-  name: "second",
+  name: "ecommerce",
   initialState,
-  reducers: {},
+  reducers: {
+    loginUser: (state, { payload }: PayloadAction<userData>) => {
+      state.currentUser = payload;
+    },
+    logoutUser: (state) => {
+      state.currentUser = null;
+    },
+  },
 });
 
-export const {} = ReduxState.actions;
+export const { loginUser, logoutUser } = ReduxState.actions;
 
 export default ReduxState.reducer;
