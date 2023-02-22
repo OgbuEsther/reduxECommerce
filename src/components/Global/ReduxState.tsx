@@ -44,6 +44,9 @@ const ReduxState = createSlice({
         });
       }
     },
+    removeFromCart: (state, { payload }: PayloadAction<cartData>) => {
+      const checking = state.cart.findIndex((el) => el._id === payload._id);
+    },
   },
 });
 
