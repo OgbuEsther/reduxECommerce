@@ -2,6 +2,7 @@ import React from "react";
 import { useRoutes } from "react-router-dom";
 import CartPage from "../Cart/CartPage";
 import HomeScreen from "../HomeScreen";
+import Products from "../Products/Products";
 import SinglePage from "../Singlepage/SinglePage";
 
 const AllRoutes = () => {
@@ -17,6 +18,10 @@ const AllRoutes = () => {
     {
       path: "/cart",
       element: <CartPage />,
+    },
+    {
+      path: "/product",
+      element: <Products />,
     },
   ]);
   return <div>{routes}</div>;
