@@ -6,41 +6,18 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../Api/Api";
-
+import { UseAppDispatch } from "../Global/Store";
+import { loginUser } from "../Global/ReduxState";
 const Register = () => {
-  // const dispatch = UseAppDispach();
-  // const schema = yup
-  //   .object({
-  //     name: yup.string().required("field must be required"),
-  //     email: yup.string().email().required(),
-  //     password: yup.string().min(9).required(),
-  //   })
-  //   .required();
+  const dispatch = UseAppDispatch();
 
-  // type formData = yup.InferType<typeof schema>;
-
-  // const {
-  //   handleSubmit,
-  //   formState: { errors },
-  //   reset,
-  //   register,
-  // } = useForm<formData>({
-  //   resolver: yupResolver(schema),
-  // });
-
-  // const post = useMutation({
-  //   mutationKey: ["postUser"],
-  //   mutationFn: CreateUser,
-  //   onSuccess: (data) => {
-  //     // console.log(data.data);
-  //     dispatch(loginUser(data.data));
-  //   },
-  // });
-
-  // const Submit = handleSubmit((data) => {
-  //   post.mutate(data);
-  //   reset();
-  // });
+  const userSchema = yup
+    .object({
+      name: yup.string().required("please enter a name"),
+      email: yup.string().required("please enter a email"),
+      password: yup.string().required("please enter a password"),
+    })
+    .required();
 
   return (
     <Container>
