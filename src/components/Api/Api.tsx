@@ -15,7 +15,5 @@ export const createUser = async ({ name, email, password }: userData) => {
       email,
       password,
     })
-    .then((res) => {
-      console.log(res);
-    });
+    .then((res) => res.data);
 };
