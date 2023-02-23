@@ -19,16 +19,39 @@ const Register = () => {
     })
     .required();
 
+  type formData = yup.InferType<typeof userSchema>;
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(userSchema),
+  });
+
+  const post = useMutation({
+    mutationKey: ["postUser"],
+    mutationFn: createUser,
+    // onSuccess: (data) => {
+    //   dispatch(loginUser(data.user))
+    // }
+  });
+
+  const submit = handleSubmit((data) => {
+    post.mutate(data);
+    reset();
+  });
+
   return (
     <Container>
-      <Card>
-        <h3>Register</h3>
-        <input placeholder="Enter your name" />
-        <p>error</p>
-        <input placeholder="Enter your email" />
-        <p>error</p>
-        <input placeholder="Enter your password" />
-        <p>error</p>
+      <Card onSubmit={submit}>
+        <input {...register("name")} placeholder="Enter your name" />
+        <p>{errors?.name && errors?.name?.message}</p>
+        <input {...register("email")} placeholder="Enter your email" />
+        <p>{errors?.email && errors?.email?.message}</p>
+        <input {...register("password")} placeholder="Enter your password" />
+        <p>{errors?.password && errors?.password?.message}</p>
         <MainButton type="submit">Register</MainButton>
       </Card>
     </Container>
