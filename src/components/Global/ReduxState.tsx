@@ -49,14 +49,18 @@ const ReduxState = createSlice({
       state.cart = removeItem;
     },
 
-    /**  removeProduct: (state, action) => {
-            let index = state.products.indexOf(action.payload);
-            state.quantity -= action.payload
-            state.products.splice(index, 1)
-         */
+    removeProduct: (state, { payload }: PayloadAction<cartData>) => {},
+
+    // removeProduc: (state, action) => {
+    //   let index = state.cart.indexOf(action.payload);
+
+    //   state.cart.splice(index, 1)
+
+    // }
   },
 });
 
-export const { loginUser, logoutUser, addToCart } = ReduxState.actions;
+export const { loginUser, logoutUser, addToCart, removeProduct } =
+  ReduxState.actions;
 
 export default ReduxState.reducer;
