@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Arrivals from "./Arrivals";
+import Categories from "./Categories/Categories";
 import Discover from "./Discover";
 import Explore from "./Explore";
 import Hero from "./Hero";
@@ -43,6 +44,7 @@ const HomeScreen = () => {
       <br />
       <br />
       <Explore />
+      <Categories />
     </div>
   );
 };
