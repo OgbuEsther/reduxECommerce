@@ -1,5 +1,6 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
+import Register from "../auth/Register";
 import CartPage from "../Cart/CartPage";
 import HomeScreen from "../HomeScreen";
 import Products from "../Products/Products";
@@ -22,6 +23,10 @@ const AllRoutes = () => {
     {
       path: "/product",
       element: <Products />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
     },
   ]);
   return <div>{routes}</div>;

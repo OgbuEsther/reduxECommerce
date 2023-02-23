@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import pic from "./ASSESTS/TWO.png";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -13,19 +15,20 @@ const Header = () => {
             <Logo src={pic} />
           </Wrapper>
           <NavHold>
-            <Nav>Home</Nav>
-            <Nav>About</Nav>
-            <Nav>Products</Nav>
-            <Nav>Services</Nav>
+            <Nav to="/">Home</Nav>
+            <Nav to="/about">About</Nav>
+            <Nav to="/product">Products</Nav>
+            <Nav to="/services">Services</Nav>
           </NavHold>
 
           <IconHold>
             <Icon>
               <BsSearch />
             </Icon>
-            <Icon>
+            <Icon1 to="/cart">
               <AiOutlineShoppingCart />
-            </Icon>
+              <Count>0</Count>
+            </Icon1>
             {/* <Icon></Icon> */}
             <Button>Get Started</Button>
           </IconHold>
@@ -36,6 +39,18 @@ const Header = () => {
 };
 
 export default Header;
+
+const Count = styled.div`
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: lightblue;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+`;
 
 const Button = styled.button`
   width: 120px;
@@ -61,6 +76,20 @@ const Icon = styled.div`
   cursor: pointer;
   font-weight: 500;
   font-size: 20px;
+  text-decoration: none;
+`;
+
+const Icon1 = styled(Link)`
+  margin-right: 10px;
+  color: #000000e6;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  cursor: pointer;
+  text-decoration: none;
 `;
 
 const IconHold = styled.div`
@@ -68,11 +97,12 @@ const IconHold = styled.div`
   align-items: center;
 `;
 
-const Nav = styled.div`
+const Nav = styled(NavLink)`
   margin-right: 10px;
   color: #000000e6;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
 `;
 
 const NavHold = styled.div`
