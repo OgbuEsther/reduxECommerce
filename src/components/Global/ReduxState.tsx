@@ -20,6 +20,8 @@ interface cartData {
 const initialState = {
   currentUser: {} as userData | null,
   cart: [] as Array<cartData>,
+  totalPrice: 0,
+  totalQuantity: 0,
 };
 
 const ReduxState = createSlice({
@@ -43,24 +45,23 @@ const ReduxState = createSlice({
           cartQuantity: 1,
         });
       }
+      state.totalQuantity += 1;
     },
     removeFromCart: (state, { payload }: PayloadAction<cartData>) => {
-      const removeItem = state.cart.filter((el) => el._id !== payload._id);
-      state.cart = removeItem;
+      const check = state.cart.findIndex((el) => el._id === payload._id);
+
+      if (state.cart[check].cartQuantity > 1) {
+        state.cart[check].cartQuantity -= 1;
+      } else {
+        state.cart = state.cart.filter((el) => el._id !== payload._id);
+      }
+
+      state.totalQuantity -= 1;
     },
-
-    removeProduct: (state, { payload }: PayloadAction<cartData>) => {},
-
-    // removeProduc: (state, action) => {
-    //   let index = state.cart.indexOf(action.payload);
-
-    //   state.cart.splice(index, 1)
-
-    // }
   },
 });
 
-export const { loginUser, logoutUser, addToCart, removeProduct } =
+export const { loginUser, logoutUser, addToCart, removeFromCart } =
   ReduxState.actions;
 
 export default ReduxState.reducer;

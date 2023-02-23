@@ -35,9 +35,9 @@ const Register = () => {
     mutationKey: ["postUser"],
     mutationFn: createUser,
 
-    onSuccess: (data: any) => {
-      dispatch(loginUser(data.data));
-    },
+    // onSuccess: (data: any) => {
+    //   dispatch(loginUser(data.data));
+    // },
   });
 
   const submit = handleSubmit((data) => {
