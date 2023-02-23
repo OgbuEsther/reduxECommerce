@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import { createUser } from "../Api/Api";
 
 const Register = () => {
   // const dispatch = UseAppDispach();
