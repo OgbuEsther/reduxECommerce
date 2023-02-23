@@ -30,7 +30,9 @@ const Header = () => {
               <Count>0</Count>
             </Icon1>
             {/* <Icon></Icon> */}
-            <Button>Get Started</Button>
+            <Link to="/register">
+              <Button>Get Started</Button>
+            </Link>
           </IconHold>
         </Container>
       </Hold>
