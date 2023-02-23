@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const endPoint = "https://localhost:4573/api";
+const endPoint = "http://localhost:4573/api";
 
 interface userData {
   name: string;

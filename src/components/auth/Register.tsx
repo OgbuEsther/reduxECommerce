@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Swal from "sweetalert2";
 
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -33,6 +34,7 @@ const Register = () => {
   const post = useMutation({
     mutationKey: ["postUser"],
     mutationFn: createUser,
+
     // onSuccess: (data) => {
     //   dispatch(loginUser(data.user))
     // }
@@ -41,6 +43,13 @@ const Register = () => {
   const submit = handleSubmit((data) => {
     post.mutate(data);
     reset();
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "signed up successfully",
+      showConfirmButton: false,
+      timer: 2500,
+    });
   });
 
   return (
