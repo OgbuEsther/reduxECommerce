@@ -6,6 +6,7 @@ import Explore from "./Explore";
 import Hero from "./Hero";
 import New from "./New";
 import Prod from "./Prod";
+import Ship from "./Ship";
 import Steps from "./Steps";
 import StepsComp from "./StepsComp";
 
@@ -23,7 +24,7 @@ const HomeScreen = () => {
       <br />
       <br />
       <br />
-      {/* <Prod /> */}
+
       <Arrivals />
       <br />
       <br />
@@ -31,6 +32,7 @@ const HomeScreen = () => {
       <Hold>
         <hr />
       </Hold>
+
       <br />
       <br />
       <StepsComp />
