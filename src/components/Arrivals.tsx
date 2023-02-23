@@ -98,7 +98,7 @@ export default Arrivals;
 const Container = styled.div`
   width: 100vw;
   /* height: 600px; */
-
+  color: black;
   /* background-color: blue; */
   display: flex;
   align-items: center;
@@ -158,7 +158,7 @@ const Txt = styled.div`
   font-size: 15px;
   font-weight: bold;
   margin-left: 20px;
-  color: rgb(17, 24, 39);
+  color: rgb(28, 28, 29);
   margin-top: 25px;
 `;
 const Below = styled.div`
@@ -177,11 +177,11 @@ const Price = styled.div`
   display: flex;
   justify-content: center;
   border-radius: 10px;
-  color: rgb(17, 24, 39);
+  color: rgb(15, 15, 15);
 `;
 const Ratings = styled.div`
   display: flex;
   align-items: center;
   font-size: 16px;
-  color: lightgray;
+  color: #161515;
 `;
