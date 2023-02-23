@@ -3,12 +3,9 @@ import styled from "styled-components";
 import Arrivals from "./Arrivals";
 import Categories from "./Categories/Categories";
 import Discover from "./Discover";
-import Explore from "./Explore";
+
 import Hero from "./Hero";
-import New from "./New";
-import Prod from "./Prod";
-import Ship from "./Ship";
-import Steps from "./Steps";
+
 import StepsComp from "./StepsComp";
 
 const HomeScreen = () => {
@@ -43,7 +40,7 @@ const HomeScreen = () => {
       <br />
       <br />
       <br />
-      <Explore />
+
       <Categories />
     </div>
   );
