@@ -8,15 +8,6 @@ interface userData {
   password: string;
 }
 
-// interface productsData {
-//   title: string;
-//   desc: string;
-//   price: number;
-//   quantity: number;
-//   category: string;
-//   status: boolean;
-// }
-
 export const createUser = async ({ name, email, password }: userData) => {
   await axios
     .post(`${endPoint}/register`, {
@@ -30,6 +21,12 @@ export const createUser = async ({ name, email, password }: userData) => {
 export const getAllProduct = async () => {
   return await axios
     .get(`http://localhost:4573/api/allproducts`)
+    .then((res) => res.data);
+};
+
+export const SingleProduct = async (id: any) => {
+  return await axios
+    .get(`${endPoint}/allproducts/${id}`)
     .then((res) => res.data);
 };
 

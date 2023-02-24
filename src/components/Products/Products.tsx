@@ -83,6 +83,8 @@ const Title = styled.div`
 const Desc = styled.div`
   color: gray;
   width: 250px;
+  font-size: 13px;
+  text-align: left;
 `;
 const PriceHold = styled.div`
   display: flex;
@@ -118,6 +120,7 @@ const Holder = styled.div`
   flex-wrap: wrap;
   align-items: center;
   padding-bottom: 70px;
+  justify-content: space-between;
 `;
 
 const Head = styled.div`
