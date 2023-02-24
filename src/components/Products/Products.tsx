@@ -3,8 +3,16 @@ import { AiFillStar } from "react-icons/ai";
 
 import pic from "../ASSESTS/hero1.png";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { allProduct } from "../Api/Api";
 
 const Products = () => {
+  const GetProducts = useQuery({
+    queryKey: ["products"],
+    queryFn: allProduct,
+  });
+
+  console.log(GetProducts);
   return (
     <Container>
       <Head>
@@ -12,32 +20,34 @@ const Products = () => {
         <span style={{ color: "gray" }}>REY backpacks & bags</span>
       </Head>
       <Holder>
-        <Card>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to={`/details/`}
-          >
-            <MainImage>
-              <ImageHold>
-                <Image src={pic} />
-              </ImageHold>
-              <Title>props.title</Title>
-              <Desc>New design 2023</Desc>
-              <PriceHold>
-                <Price>$props.price</Price>
-                <Ratting>
-                  <AiFillStar
-                    style={{
-                      color: "gold",
-                      marginRight: "10px",
-                    }}
-                  />
-                  4.2(87 reviews)
-                </Ratting>
-              </PriceHold>
-            </MainImage>
-          </Link>
-        </Card>
+        {GetProducts?.data?.data?.map((props: any) => (
+          <Card>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to={`/details/`}
+            >
+              <MainImage>
+                <ImageHold>
+                  <Image src={pic} />
+                </ImageHold>
+                <Title>{props.title}</Title>
+                <Desc>New design 2023</Desc>
+                <PriceHold>
+                  <Price>$props.price</Price>
+                  <Ratting>
+                    <AiFillStar
+                      style={{
+                        color: "gold",
+                        marginRight: "10px",
+                      }}
+                    />
+                    4.2(87 reviews)
+                  </Ratting>
+                </PriceHold>
+              </MainImage>
+            </Link>
+          </Card>
+        ))}
       </Holder>
     </Container>
   );
