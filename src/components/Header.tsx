@@ -6,11 +6,16 @@ import pic from "./ASSESTS/TWO.png";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { UseAppDispatch, useAppSelector } from "./Global/Store";
+import { clearCart } from "./Global/ReduxState";
 
 const Header = () => {
   const userData = useAppSelector((state) => state.myReducer.cart);
 
   const dispatch = UseAppDispatch();
+
+  const readCartQuantity = useAppSelector(
+    (state) => state.myReducer.totalQuantity
+  );
 
   return (
     <div>
@@ -32,7 +37,7 @@ const Header = () => {
             </Icon>
             <Icon1 to="/cart">
               <AiOutlineShoppingCart />
-              <Count> {}</Count>
+              <Count> {readCartQuantity}</Count>
             </Icon1>
             {/* <Icon></Icon> */}
             <Link to="/register">

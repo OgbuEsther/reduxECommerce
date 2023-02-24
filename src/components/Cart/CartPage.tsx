@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { addToCart, removeFromCart } from "../Global/ReduxState";
+import { addToCart, clearCart, removeFromCart } from "../Global/ReduxState";
 import { UseAppDispatch, useAppSelector } from "../Global/Store";
 
 const CartPage = () => {
@@ -12,7 +12,13 @@ const CartPage = () => {
       <Holder>
         <h2>Shopping Cart</h2>
         <p>Homepage/Clothing Categories/Shopping Cart</p>
-
+        <button
+          onClick={() => {
+            dispatch(clearCart());
+          }}
+        >
+          clear cart
+        </button>
         <br />
         <br />
         <MainHold>

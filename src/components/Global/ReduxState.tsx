@@ -64,7 +64,7 @@ const ReduxState = createSlice({
   },
 });
 
-export const { loginUser, logoutUser, addToCart, removeFromCart } =
+export const { loginUser, logoutUser, addToCart, clearCart, removeFromCart } =
   ReduxState.actions;
 
 export default ReduxState.reducer;
