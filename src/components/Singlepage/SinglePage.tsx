@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { SingleProduct } from "../Api/Api";
 import pic from "../ASSESTS/hher.png";
+import { addToCart } from "../Global/ReduxState";
 import { UseAppDispatch, useAppSelector } from "../Global/Store";
 
 const SinglePage = () => {
@@ -38,10 +39,25 @@ const SinglePage = () => {
           <Holder>
             <ButtonHold>
               <But>-</But>
-              <Count>0</Count>
-              <But>+</But>
+              <Count>{singleItem[0]?.cartQuantity} </Count>
+              <But
+                disabled={
+                  singleItem[0]?.cartQuantity === getData?.data?.data.quantity
+                }
+                onClick={() => {
+                  dispatch(addToCart(getData?.data?.data));
+                }}
+              >
+                +
+              </But>
             </ButtonHold>
-            <MainButton>add to cart</MainButton>
+            <MainButton
+              onClick={() => {
+                dispatch(addToCart(getData?.data?.data));
+              }}
+            >
+              add to cart
+            </MainButton>
           </Holder>
           <DescHold>{getData?.data?.data?.desc} </DescHold>
           <br />
