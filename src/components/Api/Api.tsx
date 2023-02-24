@@ -30,7 +30,7 @@ export const createUser = async ({ name, email, password }: userData) => {
 export const allProduct = async () => {
   await axios
     .get(`http://localhost:4573/api/allproducts`)
-    .then((res) => res.data);
+    .then((res) => console.log(res.data));
 };
 
 // console.log("this is all products", allProduct);

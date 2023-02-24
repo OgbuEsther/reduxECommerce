@@ -28,6 +28,7 @@ const Products = () => {
         <span style={{ color: "gray" }}>REY backpacks & bags</span>
       </Head>
       <Holder>
+        {/* {allProducts?.data?.map((el: any) => ( */}
         <Card>
           <Link
             style={{ textDecoration: "none", color: "black" }}
@@ -54,6 +55,7 @@ const Products = () => {
             </MainImage>
           </Link>
         </Card>
+        {/* ))} */}
       </Holder>
     </Container>
   );
