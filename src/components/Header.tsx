@@ -5,9 +5,12 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import pic from "./ASSESTS/TWO.png";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { UseAppDispatch, useAppSelector } from "./Global/Store";
 
 const Header = () => {
-  // const userData = useA
+  const userData = useAppSelector((state) => state.myReducer.cart)
+
+  const dispatch = UseAppDispatch()
 
   return (
     <div>
@@ -29,7 +32,7 @@ const Header = () => {
             </Icon>
             <Icon1 to="/cart">
               <AiOutlineShoppingCart />
-              <Count>0</Count>
+              <Count> {}</Count>
             </Icon1>
             {/* <Icon></Icon> */}
             <Link to="/register">
