@@ -17,3 +17,7 @@ export const createUser = async ({ name, email, password }: userData) => {
     })
     .then((res) => res.data);
 };
+
+export const allProduct = async () => {
+  await axios.get(`${endPoint}/products`);
+};
