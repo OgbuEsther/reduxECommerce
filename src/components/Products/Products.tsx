@@ -6,6 +6,15 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { allProduct } from "../Api/Api";
 
+interface productsData {
+  title: string;
+  desc: string;
+  price: number;
+  quantity: number;
+  category: string;
+  status: boolean;
+}
+
 const Products = () => {
   const GetProducts = useQuery({
     queryKey: ["products"],
@@ -20,7 +29,7 @@ const Products = () => {
         <span style={{ color: "gray" }}>REY backpacks & bags</span>
       </Head>
       <Holder>
-        {GetProducts.data?.data.map((props: any) => (
+        {GetProducts?.data.map((props: any) => (
           <Card>
             <Link
               style={{ textDecoration: "none", color: "black" }}

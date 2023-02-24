@@ -30,3 +30,5 @@ export const createUser = async ({ name, email, password }: userData) => {
 export const allProduct = async () => {
   await axios.get(`${endPoint}/products`).then((res) => res.data);
 };
+
+console.log(allProduct);
