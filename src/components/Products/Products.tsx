@@ -64,7 +64,7 @@ const Products = () => {
 export default Products;
 
 const Card = styled.div`
-  margin: 20px;
+  margin: 10px;
 `;
 const ImageHold = styled.div`
   height: 250px;

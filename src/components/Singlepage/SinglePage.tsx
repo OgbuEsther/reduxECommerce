@@ -1,15 +1,38 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { SingleProduct } from "../Api/Api";
+import pic from "../ASSESTS/hher.png";
+import { UseAppDispatch, useAppSelector } from "../Global/Store";
 
 const SinglePage = () => {
+  const { id } = useParams();
+  const dispatch = UseAppDispatch();
+  const readCart = useAppSelector((state) => state.myReducer.cart);
+  const singleItem = readCart.filter((el) => el._id === id);
+
+  console.log(singleItem);
+
+  const getData = useQuery({
+    queryKey: ["product", id],
+    queryFn: () => {
+      return SingleProduct(id);
+    },
+  });
+
+  console.log(getData);
+
   return (
     <div>
       <Container>
-        <First></First>
+        <First>
+          <img src={pic} alt="" />
+        </First>
         <Second>
-          <h2></h2>
+          <h2>{getData?.data?.data?.title} </h2>
           <PriceHold>
-            <Price></Price>
+            <Price>${getData?.data?.data?.price}</Price>
             <Rating></Rating>
           </PriceHold>
           <Holder>
@@ -20,7 +43,7 @@ const SinglePage = () => {
             </ButtonHold>
             <MainButton>add to cart</MainButton>
           </Holder>
-          <DescHold>Lorem, ipsum.</DescHold>
+          <DescHold>{getData?.data?.data?.desc} </DescHold>
           <br />
           <span></span>
         </Second>
@@ -131,6 +154,12 @@ const First = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 const Container = styled.div`
