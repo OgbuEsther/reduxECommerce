@@ -27,10 +27,10 @@ export const createUser = async ({ name, email, password }: userData) => {
     .then((res) => res.data);
 };
 
-export const allProduct = async () => {
-  await axios
+export const getAllProduct = async () => {
+  return await axios
     .get(`http://localhost:4573/api/allproducts`)
-    .then((res) => console.log(res.data));
+    .then((res) => res.data);
 };
 
 // console.log("this is all products", allProduct);

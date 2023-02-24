@@ -4,21 +4,21 @@ import { AiFillStar } from "react-icons/ai";
 import pic from "../ASSESTS/hero1.png";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { allProduct } from "../Api/Api";
+import { getAllProduct } from "../Api/Api";
 
-interface productsData {
-  title: string;
-  desc: string;
-  price: number;
-  quantity: number;
-  category: string;
-  status: boolean;
-}
+// interface productsData {
+//   title: string;
+//   desc: string;
+//   price: number;
+//   quantity: number;
+//   category: string;
+//   status: boolean;
+// }
 
 const Products = () => {
   const allProducts = useQuery({
-    queryKey: ["products"],
-    queryFn: allProduct,
+    queryKey: ["get-all"],
+    queryFn: getAllProduct,
   });
   console.log("this is get all products", allProducts);
   return (
@@ -28,34 +28,34 @@ const Products = () => {
         <span style={{ color: "gray" }}>REY backpacks & bags</span>
       </Head>
       <Holder>
-        {/* {allProducts?.data?.map((el: any) => ( */}
-        <Card>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to={`/details/`}
-          >
-            <MainImage>
-              <ImageHold>
-                <Image src={pic} />
-              </ImageHold>
-              <Title></Title>
-              <Desc>New design 2023</Desc>
-              <PriceHold>
-                <Price>$props.price</Price>
-                <Ratting>
-                  <AiFillStar
-                    style={{
-                      color: "gold",
-                      marginRight: "10px",
-                    }}
-                  />
-                  4.2(87 reviews)
-                </Ratting>
-              </PriceHold>
-            </MainImage>
-          </Link>
-        </Card>
-        {/* ))} */}
+        {allProducts?.data?.data.map((el: any) => (
+          <Card key={el._id}>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to={`/details/${el._id}`}
+            >
+              <MainImage>
+                <ImageHold>
+                  <Image src={pic} />
+                </ImageHold>
+                <Title>{el.title} </Title>
+                <Desc>{el.desc} </Desc>
+                <PriceHold>
+                  <Price>${el.price}</Price>
+                  <Ratting>
+                    <AiFillStar
+                      style={{
+                        color: "gold",
+                        marginRight: "10px",
+                      }}
+                    />
+                    4.2(87 reviews)
+                  </Ratting>
+                </PriceHold>
+              </MainImage>
+            </Link>
+          </Card>
+        ))}
       </Holder>
     </Container>
   );
@@ -64,7 +64,7 @@ const Products = () => {
 export default Products;
 
 const Card = styled.div`
-  margin: 10px;
+  margin: 20px;
 `;
 const ImageHold = styled.div`
   height: 250px;
@@ -82,6 +82,7 @@ const Title = styled.div`
 `;
 const Desc = styled.div`
   color: gray;
+  width: 250px;
 `;
 const PriceHold = styled.div`
   display: flex;
