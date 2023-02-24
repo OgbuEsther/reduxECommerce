@@ -16,12 +16,11 @@ interface productsData {
 }
 
 const Products = () => {
-  const GetProducts = useQuery({
+  const allProducts = useQuery({
     queryKey: ["products"],
     queryFn: allProduct,
   });
-
-  console.log(GetProducts);
+  console.log("this is get all products", allProducts);
   return (
     <Container>
       <Head>
@@ -29,34 +28,32 @@ const Products = () => {
         <span style={{ color: "gray" }}>REY backpacks & bags</span>
       </Head>
       <Holder>
-        {GetProducts?.data.map((props: any) => (
-          <Card>
-            <Link
-              style={{ textDecoration: "none", color: "black" }}
-              to={`/details/`}
-            >
-              <MainImage>
-                <ImageHold>
-                  <Image src={pic} />
-                </ImageHold>
-                <Title>{props.title}</Title>
-                <Desc>New design 2023</Desc>
-                <PriceHold>
-                  <Price>$props.price</Price>
-                  <Ratting>
-                    <AiFillStar
-                      style={{
-                        color: "gold",
-                        marginRight: "10px",
-                      }}
-                    />
-                    4.2(87 reviews)
-                  </Ratting>
-                </PriceHold>
-              </MainImage>
-            </Link>
-          </Card>
-        ))}
+        <Card>
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to={`/details/`}
+          >
+            <MainImage>
+              <ImageHold>
+                <Image src={pic} />
+              </ImageHold>
+              <Title></Title>
+              <Desc>New design 2023</Desc>
+              <PriceHold>
+                <Price>$props.price</Price>
+                <Ratting>
+                  <AiFillStar
+                    style={{
+                      color: "gold",
+                      marginRight: "10px",
+                    }}
+                  />
+                  4.2(87 reviews)
+                </Ratting>
+              </PriceHold>
+            </MainImage>
+          </Link>
+        </Card>
       </Holder>
     </Container>
   );
