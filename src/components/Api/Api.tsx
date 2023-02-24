@@ -33,4 +33,4 @@ export const allProduct = async () => {
     .then((res) => res.data);
 };
 
-console.log("this is all products", allProduct);
+// console.log("this is all products", allProduct);
