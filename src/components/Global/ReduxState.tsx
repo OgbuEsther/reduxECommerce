@@ -34,6 +34,9 @@ const ReduxState = createSlice({
     logoutUser: (state) => {
       state.currentUser = null;
     },
+    clearCart: (state) => {
+      state.cart = [];
+    },
     addToCart: (state, { payload }: PayloadAction<cartData>) => {
       const check = state.cart.findIndex((el) => el._id === payload._id);
 

@@ -8,9 +8,9 @@ import { NavLink } from "react-router-dom";
 import { UseAppDispatch, useAppSelector } from "./Global/Store";
 
 const Header = () => {
-  const userData = useAppSelector((state) => state.myReducer.cart)
+  const userData = useAppSelector((state) => state.myReducer.cart);
 
-  const dispatch = UseAppDispatch()
+  const dispatch = UseAppDispatch();
 
   return (
     <div>
