@@ -8,6 +8,15 @@ interface userData {
   password: string;
 }
 
+interface productsData {
+  title: string;
+  desc: string;
+  price: number;
+  quantity: number;
+  category: string;
+  status: boolean;
+}
+
 export const createUser = async ({ name, email, password }: userData) => {
   await axios
     .post(`${endPoint}/register`, {

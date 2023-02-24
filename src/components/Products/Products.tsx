@@ -20,7 +20,7 @@ const Products = () => {
         <span style={{ color: "gray" }}>REY backpacks & bags</span>
       </Head>
       <Holder>
-        {GetProducts?.data?.data?.map((props: any) => (
+        {GetProducts.data?.data.map((props: any) => (
           <Card>
             <Link
               style={{ textDecoration: "none", color: "black" }}
