@@ -9,7 +9,7 @@ import { UseAppDispatch, useAppSelector } from "./Global/Store";
 import { clearCart, logoutUser } from "./Global/ReduxState";
 
 const Header = () => {
-  const userData = useAppSelector((state) => state.myReducer.totalQuantity);
+  const userData = useAppSelector((state) => state.myReducer.cart);
 
   const userName = useAppSelector((state) => state.myReducer.currentUser);
   const dispatch = UseAppDispatch();
@@ -39,15 +39,7 @@ const Header = () => {
             <Icon1 to="/cart">
               <AiOutlineShoppingCart />
 
-              {readCartQuantity ? (
-                <>
-                  <Count> {readCartQuantity}</Count>
-                </>
-              ) : (
-                <>
-                  <Count>{userData} </Count>
-                </>
-              )}
+              <Count> {readCartQuantity}</Count>
             </Icon1>
             {/* <Icon></Icon> */}
             {userName?.name ? (
@@ -81,7 +73,7 @@ const Count = styled.div`
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background-color: rebeccapurple;
+  background-color: black;
   font-size: 10px;
   display: flex;
   justify-content: center;
@@ -90,14 +82,16 @@ const Count = styled.div`
 `;
 
 const Button = styled.button`
-  width: 120px;
-  height: 50px;
-  background-color: lightblue;
+  width: 100px;
+  height: 40px;
+  background-color: #123456;
+  color: white;
   outline: none;
   font-weight: 700;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  margin-left: 10px;
   transition: all 0.5s ease-in-out;
 
   :hover {

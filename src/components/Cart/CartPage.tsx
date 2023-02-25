@@ -205,6 +205,7 @@ const First = styled.div`
   width: 800px;
   border-right: 1px solid silver;
   margin-right: 20px;
+  margin-bottom: 20px;
   /* align-items: center; */
 `;
 const Second = styled.div`
