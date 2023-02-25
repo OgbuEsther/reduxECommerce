@@ -64,9 +64,6 @@ const ReduxState = createSlice({
     },
     remove: (state, { payload }: PayloadAction<cartData>) => {
       state.cart = state.cart.filter((el) => el._id !== payload._id);
-      // const check = state.cart.findIndex((el) => el._id === payload._id);
-      // state.totalQuantity = state.cart[check].cartQuantity -=
-      //   state.totalQuantity;
     },
   },
 });
