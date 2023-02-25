@@ -64,6 +64,9 @@ const ReduxState = createSlice({
     remove: (state, { payload }: PayloadAction<cartData>) => {
       state.cart = state.cart.filter((el) => el._id !== payload._id);
     },
+    clearQuantity: (state) => {
+      state.totalQuantity = 0;
+    },
   },
 });
 
@@ -74,6 +77,7 @@ export const {
   clearCart,
   removeFromCart,
   remove,
+  clearQuantity,
 } = ReduxState.actions;
 
 export default ReduxState.reducer;

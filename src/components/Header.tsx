@@ -9,7 +9,7 @@ import { UseAppDispatch, useAppSelector } from "./Global/Store";
 import { clearCart, logoutUser } from "./Global/ReduxState";
 
 const Header = () => {
-  const userData = useAppSelector((state) => state.myReducer.cart);
+  const userData = useAppSelector((state) => state.myReducer.totalQuantity);
 
   const userName = useAppSelector((state) => state.myReducer.currentUser);
   const dispatch = UseAppDispatch();
@@ -38,7 +38,16 @@ const Header = () => {
             </Icon>
             <Icon1 to="/cart">
               <AiOutlineShoppingCart />
-              <Count> {readCartQuantity}</Count>
+
+              {readCartQuantity ? (
+                <>
+                  <Count> {readCartQuantity}</Count>
+                </>
+              ) : (
+                <>
+                  <Count>{userData} </Count>
+                </>
+              )}
             </Icon1>
             {/* <Icon></Icon> */}
             {userName?.name ? (
@@ -59,20 +68,6 @@ const Header = () => {
                 </Link>
               </>
             )}
-
-            {/* 	{userData?.name ? (
-					<NavLink
-						onClick={() => {
-							dispatch(logoutUser());
-						}}
-						to='/'>
-						<Button>Logout</Button>
-					</NavLink>
-				) : (
-					<NavLink to='/register'>
-						<Button>Get Started</Button>
-					</NavLink>
-				)} */}
           </IconHold>
         </Container>
       </Hold>
@@ -86,7 +81,7 @@ const Count = styled.div`
   height: 15px;
   width: 15px;
   border-radius: 50%;
-  background-color: lightblue;
+  background-color: rebeccapurple;
   font-size: 10px;
   display: flex;
   justify-content: center;
@@ -97,8 +92,9 @@ const Count = styled.div`
 const Button = styled.button`
   width: 120px;
   height: 50px;
-  background-color: rebeccapurple;
+  background-color: lightblue;
   outline: none;
+  font-weight: 700;
   border: none;
   border-radius: 10px;
   cursor: pointer;
