@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { addToCart, clearCart, removeFromCart } from "../Global/ReduxState";
+import {
+  addToCart,
+  clearCart,
+  remove,
+  removeFromCart,
+} from "../Global/ReduxState";
 import { UseAppDispatch, useAppSelector } from "../Global/Store";
 
 const CartPage = () => {
@@ -12,13 +17,13 @@ const CartPage = () => {
       <Holder>
         <h2>Shopping Cart</h2>
         <p>Homepage/Clothing Categories/Shopping Cart</p>
-        <button
+        <Button
           onClick={() => {
             dispatch(clearCart());
           }}
         >
           clear cart
-        </button>
+        </Button>
         <br />
         <br />
         <MainHold>
@@ -42,7 +47,13 @@ const CartPage = () => {
                       }}
                     >
                       <Price>In Stock</Price>
-                      <Div>Remove</Div>
+                      <Div
+                        onClick={() => {
+                          dispatch(remove(cart));
+                        }}
+                      >
+                        Remove
+                      </Div>
                     </div>
                   </TextHold>
                 </ImageHolder>
@@ -99,6 +110,21 @@ const Div = styled.button`
   width: 150px;
   background-color: red;
   color: black;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  cursor: pointer;
+`;
+
+const Button = styled.button`
+  height: 45px;
+  width: 250px;
+  background-color: #123456;
+  color: white;
   font-size: 17px;
   font-weight: 700;
   border: none;
