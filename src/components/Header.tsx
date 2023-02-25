@@ -6,11 +6,12 @@ import pic from "./ASSESTS/TWO.png";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { UseAppDispatch, useAppSelector } from "./Global/Store";
-import { clearCart } from "./Global/ReduxState";
+import { clearCart, logoutUser } from "./Global/ReduxState";
 
 const Header = () => {
   const userData = useAppSelector((state) => state.myReducer.cart);
 
+  const userName = useAppSelector((state) => state.myReducer.currentUser);
   const dispatch = UseAppDispatch();
 
   const readCartQuantity = useAppSelector(
@@ -40,9 +41,38 @@ const Header = () => {
               <Count> {readCartQuantity}</Count>
             </Icon1>
             {/* <Icon></Icon> */}
-            <Link to="/register">
-              <Button>Get Started</Button>
-            </Link>
+            {userName?.name ? (
+              <>
+                <Link
+                  onClick={() => {
+                    dispatch(logoutUser());
+                  }}
+                  to="/"
+                >
+                  <Button>Get Started</Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/register">
+                  <Button>Get Started</Button>
+                </Link>
+              </>
+            )}
+
+            {/* 	{userData?.name ? (
+					<NavLink
+						onClick={() => {
+							dispatch(logoutUser());
+						}}
+						to='/'>
+						<Button>Logout</Button>
+					</NavLink>
+				) : (
+					<NavLink to='/register'>
+						<Button>Get Started</Button>
+					</NavLink>
+				)} */}
           </IconHold>
         </Container>
       </Hold>
