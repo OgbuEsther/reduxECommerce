@@ -18,7 +18,6 @@ const Cont = () => {
         Subject,
       })
       .then((res) => {
-        console.log(`this is for email`, res.data.data.createData);
         //   setUserData(res.data.data.createData)
       });
   };

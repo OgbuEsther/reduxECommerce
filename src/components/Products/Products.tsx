@@ -20,7 +20,7 @@ const Products = () => {
     queryKey: ["get-all"],
     queryFn: getAllProduct,
   });
-  console.log("this is get all products", allProducts);
+
   return (
     <Container>
       <Head>

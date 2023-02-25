@@ -13,16 +13,12 @@ const SinglePage = () => {
   const readCart = useAppSelector((state) => state.myReducer.cart);
   const singleItem = readCart.filter((el) => el._id === id);
 
-  console.log(singleItem);
-
   const getData = useQuery({
     queryKey: ["product", id],
     queryFn: () => {
       return SingleProduct(id);
     },
   });
-
-  console.log(getData);
 
   return (
     <div>

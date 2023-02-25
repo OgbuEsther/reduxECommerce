@@ -29,5 +29,3 @@ export const SingleProduct = async (id: any) => {
     .get(`${endPoint}/allproducts/${id}`)
     .then((res) => res.data);
 };
-
-// console.log("this is all products", allProduct);
