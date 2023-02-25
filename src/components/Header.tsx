@@ -111,6 +111,7 @@ const IconHold = styled.div`
 
 const Nav = styled(NavLink)`
   margin-right: 10px;
+  margin-left: 10px;
   color: #000000e6;
   font-weight: 500;
   cursor: pointer;

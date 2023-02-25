@@ -1,7 +1,9 @@
-import { write } from "fs";
 import React from "react";
 import styled from "styled-components";
 import hher from "./ASSESTS/hher.png";
+import pic from "./ASSESTS/ONE.png";
+import pix from "./ASSESTS/imgOne.png";
+import pics from "./ASSESTS/imgTwo.png";
 import { AiFillStar } from "react-icons/ai";
 
 const Arrivals = () => {
@@ -16,7 +18,7 @@ const Arrivals = () => {
         </Up>
         <Down>
           <Box>
-            <img src={hher} />
+            <img src={hher} alt="" />
             <Write>
               <Txt>
                 Leather Gloves
@@ -34,7 +36,7 @@ const Arrivals = () => {
             </Write>
           </Box>
           <Box>
-            <img src={hher} />
+            <img src={pic} alt="" />
             <Write>
               <Txt>
                 Leather Gloves
@@ -52,7 +54,7 @@ const Arrivals = () => {
             </Write>
           </Box>
           <Box>
-            <img src={hher} />
+            <img src={pix} alt="" />
             <Write>
               <Txt>
                 Leather Gloves
@@ -70,7 +72,7 @@ const Arrivals = () => {
             </Write>
           </Box>
           <Box>
-            <img src={hher} />
+            <img src={pics} alt="" />
             <Write>
               <Txt>
                 Leather Gloves
@@ -160,6 +162,9 @@ const Txt = styled.div`
   margin-left: 20px;
   color: rgb(28, 28, 29);
   margin-top: 25px;
+  span {
+    color: rgb(28, 28, 29);
+  }
 `;
 const Below = styled.div`
   margin-left: 20px;
