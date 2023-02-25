@@ -84,6 +84,7 @@ const Button = styled.button`
 
 const Icon = styled.div`
   margin-right: 10px;
+  margin-left: 10px;
   color: #000000e6;
   cursor: pointer;
   font-weight: 500;

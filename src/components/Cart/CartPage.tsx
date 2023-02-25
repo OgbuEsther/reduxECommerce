@@ -28,7 +28,7 @@ const CartPage = () => {
                 <ImageHolder>
                   <Image />
                   <TextHold>
-                    <span>zdfj</span>
+                    <span>{cart.title} </span>
                     <br />
                     <br />
                     <br />
@@ -42,7 +42,7 @@ const CartPage = () => {
                       }}
                     >
                       <Price>In Stock</Price>
-                      <div>Remove</div>
+                      <Div>Remove</Div>
                     </div>
                   </TextHold>
                 </ImageHolder>
@@ -93,6 +93,21 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
+const Div = styled.button`
+  height: 35px;
+  width: 150px;
+  background-color: red;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  cursor: pointer;
+`;
 
 const MainButton = styled.button`
   height: 45px;
