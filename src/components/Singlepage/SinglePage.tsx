@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { SingleProduct } from "../Api/Api";
-import pic from "../ASSESTS/hher.png";
+import pic from "../ASSESTS/3.jpg";
 import { addToCart, removeFromCart } from "../Global/ReduxState";
 import { UseAppDispatch, useAppSelector } from "../Global/Store";
 

@@ -80,6 +80,7 @@ const TextHold = styled.div`
 
 const Second = styled.div`
   width: 70%;
+  margin-top: 50px;
 
   img {
     height: 500px;
@@ -90,6 +91,7 @@ const Second = styled.div`
 const First = styled.div`
   /* width: 40%; */
   margin-left: 80px;
+  margin-top: 50px;
 `;
 
 const Container = styled.div`

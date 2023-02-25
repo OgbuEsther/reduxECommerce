@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { AiFillStar } from "react-icons/ai";
 
-import pic from "../ASSESTS/hero1.png";
+import pic from "../ASSESTS/3.jpg";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getAllProduct } from "../Api/Api";

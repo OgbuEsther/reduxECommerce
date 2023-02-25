@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import hher from "./ASSESTS/hher.png";
-import pic from "./ASSESTS/ONE.png";
-import pix from "./ASSESTS/imgOne.png";
-import pics from "./ASSESTS/imgTwo.png";
+import hher from "./ASSESTS/11.png";
+import pic from "./ASSESTS/1.png";
+import pix from "./ASSESTS/2.png";
+import pics from "./ASSESTS/3.jpg";
 import { AiFillStar } from "react-icons/ai";
 
 const Arrivals = () => {
@@ -22,8 +22,13 @@ const Arrivals = () => {
             <Write>
               <Txt>
                 Leather Gloves
-                <span style={{ color: "lightgray", marginTop: "10px" }}>
-                  Perfect mint green
+                <span
+                  style={{
+                    color: "rgba(39, 40, 41, 0.849)",
+                    marginTop: "10px",
+                  }}
+                >
+                  Perfect Black
                 </span>
               </Txt>
               <Below>
@@ -39,8 +44,13 @@ const Arrivals = () => {
             <img src={pic} alt="" />
             <Write>
               <Txt>
-                Leather Gloves
-                <span style={{ color: "lightgray", marginTop: "10px" }}>
+                Long Sleeves
+                <span
+                  style={{
+                    color: "rgba(39, 40, 41, 0.849)",
+                    marginTop: "10px",
+                  }}
+                >
                   Perfect mint green
                 </span>
               </Txt>
@@ -57,9 +67,14 @@ const Arrivals = () => {
             <img src={pix} alt="" />
             <Write>
               <Txt>
-                Leather Gloves
-                <span style={{ color: "lightgray", marginTop: "10px" }}>
-                  Perfect mint green
+                Shorts
+                <span
+                  style={{
+                    color: "rgba(39, 40, 41, 0.849)",
+                    marginTop: "10px",
+                  }}
+                >
+                  Perfect lilac shorts
                 </span>
               </Txt>
               <Below>
@@ -75,9 +90,14 @@ const Arrivals = () => {
             <img src={pics} alt="" />
             <Write>
               <Txt>
-                Leather Gloves
-                <span style={{ color: "lightgray", marginTop: "10px" }}>
-                  Perfect mint green
+                sneakers
+                <span
+                  style={{
+                    color: "rgba(39, 40, 41, 0.849)",
+                    marginTop: "10px",
+                  }}
+                >
+                  Perfect white
                 </span>
               </Txt>
               <Below>

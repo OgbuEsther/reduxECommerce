@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import one from "./ASSESTS/imgOne.png";
 import two from "./ASSESTS/imgTwo.png";
-import three from "./ASSESTS/imgThree.png";
+import three from "./ASSESTS/4.png";
 const Discover = () => {
   return (
     <div>
