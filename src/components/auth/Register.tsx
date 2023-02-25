@@ -9,8 +9,11 @@ import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../Api/Api";
 import { UseAppDispatch } from "../Global/Store";
 import { loginUser } from "../Global/ReduxState";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const dispatch = UseAppDispatch();
+
+  const navigate = useNavigate();
 
   const userSchema = yup
     .object({
@@ -43,6 +46,7 @@ const Register = () => {
   const submit = handleSubmit((data) => {
     post.mutate(data);
     reset();
+    navigate("/");
     Swal.fire({
       position: "center",
       icon: "success",

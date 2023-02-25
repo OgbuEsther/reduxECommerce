@@ -47,9 +47,9 @@ const Header = () => {
                   onClick={() => {
                     dispatch(logoutUser());
                   }}
-                  to="/"
+                  to="/home"
                 >
-                  <Button>Get Started</Button>
+                  <Button>LogOut</Button>
                 </Link>
               </>
             ) : (
